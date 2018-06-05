@@ -8,6 +8,7 @@ def guessing_game():
     random_nums = randint(1, 100)
     count = 0
     guess = 0
+    lowest_score = none
 
     while guess != random_nums:
         guess = int(input("Enter a number between 1 and 100: "))
@@ -21,6 +22,9 @@ def guessing_game():
             print("Too low.")
             count += 1
     print("You guessed it in {} tries.".format(count))
+    if count < lowest_score or lowest_score == none:
+        print("Your new low score is: ".format(count))
+        lowest_score = count
     play_again = input("Would you like to play again? Y/N: ")
     if play_again.upper() == 'N':
         print("Thanks for playing!")
