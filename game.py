@@ -21,11 +21,11 @@ def guessing_game():
             print("Too low.")
             count += 1
     print("You guessed it in {} tries.".format(count))
+    play_again = input("Would you like to play again? Y/N: ")
+    if play_again.upper() == 'N':
+        print("Thanks for playing!")
+    else:
+        guessing_game()
 
 
 guessing_game()
-play_again = input("Would you like to play again? Y/N: ")
-if play_again.upper() == 'N':
-    print("Thanks for playing!")
-else:
-    guessing_game()
