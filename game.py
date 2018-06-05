@@ -1,8 +1,10 @@
 from random import randint
 
-while True:
-    print("Hello! Guess a number between 1 and 100!")
-    player_name = input("Enter your name: ")
+print("Hello! Guess a number between 1 and 100!")
+player_name = input("Enter your name: ")
+
+
+def guessing_game():
     random_nums = randint(1, 100)
     count = 0
     guess = 0
@@ -15,13 +17,15 @@ while True:
         elif guess > random_nums:
             print("Too high.")
             count += 1
-        else:
+        elif guess < random_nums:
             print("Too low.")
             count += 1
     print("You guessed it in {} tries.".format(count))
-    play_again = input("Would you like to play again? Y/N: ")
-    if play_again.upper() == 'N':
-        print("Thanks for playing!")
-        break
-    else:
-        pass
+
+
+guessing_game()
+play_again = input("Would you like to play again? Y/N: ")
+if play_again.upper() == 'N':
+    print("Thanks for playing!")
+else:
+    guessing_game()
